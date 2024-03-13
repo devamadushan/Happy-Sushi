@@ -1,0 +1,37 @@
+
+<div class="row d-flex"> 
+    <div class="col position-fixed laList">
+        <div class="list" *ngFor="let keys of listBoxBySaveurs.keys() ">
+            <hr>
+            <div class="zone ">
+                
+                    <img src="../../../assets/{{keys}}.png" alt="" style="width: 100%;">
+                    <div >
+                    
+                     <p class="saveur " style="font-size: 90%;text-align: center; ">{{ keys }}</p>
+                     
+                    </div>
+                
+            
+        </div>
+         <hr>
+         </div>
+        </div>
+        <app-panier></app-panier>
+<div class="row carte">
+
+    <div *ngFor="let box of boxes" class="col my-4" style="text-align: center;">
+        <a href="" >
+        <div class="card" >
+        <img src="http://localhost:8080/api/image/{{ box.image }}" alt=""> 
+        <p class="button-box" (click)="addPanier(box)">{{ box.nom }}  </p>
+        </div>
+        </a>
+    <p style="color: white; padding-top: 2%;">${{ box.prix }}</p> 
+   <hr style="width: 50%; margin: auto;" >
+    </div>
+    
+</div>
+</div>
+
+

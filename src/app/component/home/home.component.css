@@ -1,0 +1,98 @@
+.carte{
+    width: 70%;
+    margin: auto;
+    
+    margin-right: 15%;
+    
+    
+}
+.card{
+    width: 19rem;
+    padding: 5%; 
+    text-align: center; 
+    margin: auto;
+    
+    
+
+
+
+}
+.button-box{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: auto;
+    color: white;
+    background-color: #ff7f17; 
+    border: white; 
+    
+    
+}
+
+.list{
+    text-align: center;
+
+    width: 100%;
+    position: sticky;
+    text-align: center;
+    display: flex;
+    height: 210px;
+    margin: auto;
+
+
+}
+.saveur{
+   text-align: center;
+    border-bottom: 9px solid  #ff7f17;
+
+    
+    
+
+
+    
+    
+}
+.zone{
+    animation-duration: 10s;
+    animation-name: mesImages;
+    animation-iteration-count:2s;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding: 11%;
+    position: relative;
+   
+}
+
+
+@keyframes mesImages {
+    0%{
+      transform:translateY(0);
+    }
+    16%{
+      transform:translateY(-200px);
+    }
+    32%{
+      transform:translateY(-400px);
+    }
+    48%{
+      transform:translateY(-600px);
+    }
+    64%{
+      transform:translateY(-800px);
+    }
+    80%{
+      transform:translateY(0px);
+    }
+}
+.laList{
+    margin-top: 1.6%;
+    margin-left: 1%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    width: 15%;
+    height: 530px;
+}
+
+.bi{
+  
+}

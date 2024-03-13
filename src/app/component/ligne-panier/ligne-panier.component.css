@@ -1,0 +1,28 @@
+.lignes{
+    margin: auto;
+    width: 100%;
+    border-top: 3px solid #ff7f17; /* couleur et épaisseur des bordures */
+    padding: 8px; /* espace à l'intérieur des cellules */
+   border-radius: 200px;
+}
+.ligne{
+    border-collapse: collapse;
+  border-left: 3px solid #ff7f17;
+    
+   
+    text-align: center;
+    
+}
+.buttonDel{
+    
+    margin-left: -80%;
+    text-align: center;
+   
+}
+.bu{
+   float: right;
+    
+    height: 30px;
+    
+    cursor: pointer;
+}

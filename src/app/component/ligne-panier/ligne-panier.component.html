@@ -1,0 +1,13 @@
+
+<div *ngFor="let boxes of lesBoxes" >
+    
+    <table class="lignes table">
+        <tr>
+            <td class="ligne">{{ boxes.nom}} </td>
+          
+            <td class="buttonDel"><p  class="bu" (click)="deleteBox(boxes.id)"> <i class="bi bi-trash"></i> </p></td>
+        </tr>
+      
+    </table>
+
+</div>
