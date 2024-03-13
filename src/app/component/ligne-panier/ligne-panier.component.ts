@@ -12,7 +12,7 @@ export class LignePanierComponent {
   lesBoxes:Array<Box> = new Array<Box>()
   constructor(private boxs :PanierService ){
     let boxes = boxs.getAllBoxes()
-    console.log(boxes)
+    console.log("test",boxes[0]['Box'])
     for (const box of boxes) {
       this.lesBoxes.push(box)
     }    

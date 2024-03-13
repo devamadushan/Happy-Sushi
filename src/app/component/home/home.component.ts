@@ -3,6 +3,7 @@ import { BoxsService } from '../../service/boxs.service';
 import { Box } from '../../modele/Box';
 import { PanierComponent } from '../panier/panier.component';
 import { PanierService } from '../../service/panier.service';
+import { Ligne } from '../../modele/Ligne';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -59,7 +60,8 @@ listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
 
   addPanier(box : Box){
     let panier= this.panierService.getAllBoxes()
-    panier.push(box)
+   let line = new Ligne (box,0)
+    panier.push(line)
     localStorage.setItem("lesBoxes",JSON.stringify(panier))
   }
 
