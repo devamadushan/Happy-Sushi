@@ -1,7 +1,7 @@
 .lignes{
     margin: auto;
     width: 100%;
-    border-top: 3px solid #ff7f17; /* couleur et épaisseur des bordures */
+    border-top: 5px solid  #C0C0C0 ; /* couleur et épaisseur des bordures */
     padding: 8px; /* espace à l'intérieur des cellules */
    border-radius: 200px;
 }
@@ -25,4 +25,11 @@
     height: 30px;
     
     cursor: pointer;
+}
+.btn{
+    background-color: #ff7f17;
+    color: white;
+    width: 40%;
+    
+
 }

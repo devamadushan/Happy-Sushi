@@ -11,12 +11,10 @@
     padding: 5%; 
     text-align: center; 
     margin: auto;
+  
     
-    
-
-
-
 }
+
 .button-box{
     padding-left: 10%;
     padding-right: 10%;
@@ -24,7 +22,7 @@
     color: white;
     background-color: #ff7f17; 
     border: white; 
-    z-index: 9;
+    
     
 }
 

@@ -6,14 +6,14 @@ import { Ligne } from '../modele/Ligne';
   providedIn: 'root'
 })
 export class PanierService {
-
-  constructor(public panier: Array<Ligne>) {
+  panier : Array<Ligne>
+  constructor( ) {
     this.panier = JSON.parse(localStorage.getItem("lesBoxes") ?? "[]")
   }
 
   getAllBoxes() {
 
-    return this.panier
+    return  this.panier
   }
 
   setPanierBoxes(boxes: any) {
@@ -23,9 +23,10 @@ export class PanierService {
 
   }
 
-  addPanier(uneBox: Box, qte: number) {
+  addPanier(uneBox: Box) {
+   this.getAllBoxes()
     let avoirBox = false
-  
+    let qte = 1
     for (const uneLigne of this.panier) {
       if (uneLigne.box.id == uneBox.id) {
         uneLigne.qte++

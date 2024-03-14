@@ -4,7 +4,7 @@
     <table class="lignes table">
         <tr>
             <td class="ligne">{{ uneLigne.box.nom}} </td>
-          
+
             <td class="buttonDel"><p  class="bu" (click)="deleteBox(uneLigne.box.id)"> x {{ uneLigne.qte }}  <i class="bi bi-trash"></i> </p></td>
         </tr>
       
@@ -12,6 +12,7 @@
     
 
 </div>
-<div *ngIf="lesLignes.length>0">
-    <button>click</button>
+
+<div *ngIf="lesLignes.length>0" style="padding-top: 5%; text-align: center; background-color:  #C0C0C0 ;">
+    <button class="btn">click</button>
 </div>

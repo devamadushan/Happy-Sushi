@@ -13,7 +13,7 @@ import { Ligne } from '../../modele/Ligne';
 export class HomeComponent {
 
 
-
+key : string = "rien"
 boxes:Array<Box>=[]
 listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
 
@@ -62,22 +62,11 @@ listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
   }
 
   addPanier(box : Box){
-    let panier= this.panierService.getAllBoxes()
-  
-    let boxe = box
-    let boxPsente=false
-    for (const ligne of panier) {
-      if(ligne.box.id == box.id){
-        ligne.qte=ligne.qte+1
-        boxPsente=true
-      }
-    }
-    if(boxPsente==false){
-    let line = new Ligne (box,1)
-    panier.push(line)
-    }
-    console.log(panier)
-    localStorage.setItem("lesBoxes",JSON.stringify(panier))
+    this.panierService.getAllBoxes()
+    let panier= this.panierService.addPanier(box)
   }
-
+  collectKey(key:string){
+      this.key = key
+  }
+ 
 }

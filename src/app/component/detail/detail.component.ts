@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from '../home/home.component';
+
 
 @Component({
   selector: 'app-detail',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './detail.component.css'
 })
 export class DetailComponent {
+  constructor() {}
 
+  
 }
