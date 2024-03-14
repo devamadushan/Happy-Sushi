@@ -11,6 +11,7 @@ import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PanierComponent } from './component/panier/panier.component';
 import { LignePanierComponent } from './component/ligne-panier/ligne-panier.component';
+import { DetailComponent } from './component/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LignePanierComponent } from './component/ligne-panier/ligne-panier.comp
     FooterComponent,
     HomeComponent,
     PanierComponent,
-    LignePanierComponent
+    LignePanierComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

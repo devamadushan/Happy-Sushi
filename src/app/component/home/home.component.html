@@ -18,20 +18,25 @@
          </div>
         </div>
         <app-panier></app-panier>
+
 <div class="row carte">
 
     <div *ngFor="let box of boxes" class="col my-4" style="text-align: center;">
-        <a href="" >
+       
         <div class="card" >
-        <img src="http://localhost:8080/api/image/{{ box.image }}" alt=""> 
-        <p class="button-box" (click)="addPanier(box)">{{ box.nom }}  </p>
+            
+        <img  src="http://localhost:8080/api/image/{{ box.image }}" alt="">
+        
+        
+        <button class="button-box" (click)="addPanier(box)">{{ box.nom }}  </button>
         </div>
-        </a>
+       
     <p style="color: white; padding-top: 2%;">${{ box.prix }}</p> 
    <hr style="width: 50%; margin: auto;" >
     </div>
     
 </div>
+
 </div>
 
 

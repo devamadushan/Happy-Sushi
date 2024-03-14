@@ -1,13 +1,17 @@
 
-<div *ngFor="let boxes of lesBoxes" >
+<div *ngFor="let uneLigne of lesLignes" >
     
     <table class="lignes table">
         <tr>
-            <td class="ligne">{{ boxes.nom}} </td>
+            <td class="ligne">{{ uneLigne.box.nom}} </td>
           
-            <td class="buttonDel"><p  class="bu" (click)="deleteBox(boxes.id)"> <i class="bi bi-trash"></i> </p></td>
+            <td class="buttonDel"><p  class="bu" (click)="deleteBox(uneLigne.box.id)"> x {{ uneLigne.qte }}  <i class="bi bi-trash"></i> </p></td>
         </tr>
       
     </table>
+    
 
+</div>
+<div *ngIf="lesLignes.length>0">
+    <button>click</button>
 </div>

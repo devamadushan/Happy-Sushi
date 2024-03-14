@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PanierService } from '../../service/panier.service';
 import { Box } from '../../modele/Box';
+import { Ligne } from '../../modele/Ligne';
 
 @Component({
   selector: 'app-ligne-panier',
@@ -9,21 +10,22 @@ import { Box } from '../../modele/Box';
 })
 export class LignePanierComponent {
 
-  lesBoxes:Array<Box> = new Array<Box>()
+  lesLignes:Array<Ligne> = new Array<Ligne>()
   constructor(private boxs :PanierService ){
     let boxes = boxs.getAllBoxes()
-    console.log("test",boxes[0]['Box'])
+    //console.log("test",boxes[0]['Box'])
     for (const box of boxes) {
-      this.lesBoxes.push(box)
+      this.lesLignes.push(box)
     }    
   }
 
-  afficheLesBoxes():any{
+ 
+/*   afficheLesBoxes():any{
     let resultat:Array<Box> = []
 for (const box of this.lesBoxes) {
   let rep =0
  /*  let avoirBox=this.lesBoxes.find((elm)function {elm.id==box.id}) */
-  if(!resultat.includes(box)){
+ /* if(!resultat.includes(box)){
     resultat.push(box)
   }
   else{
@@ -32,10 +34,21 @@ for (const box of this.lesBoxes) {
   return resultat
 }
     this.lesBoxes
-  }
+  } */
+
   deleteBox(idBox : number){
-    let tableau= this.lesBoxes.filter(function(uneBoxe){return uneBoxe.id!=idBox})
-    this.lesBoxes=tableau
+    let tableau= this.lesLignes.filter(function(uneLigne){
+      if(uneLigne.box.id == idBox && uneLigne.qte >1){
+        uneLigne.qte = uneLigne.qte - 1
+        return uneLigne
+      }
+      else{
+        return uneLigne.box.id!= idBox
+      }
+      
+    
+    })
+    this.lesLignes=tableau
     this.boxs.setPanierBoxes(tableau)    
   }
 
