@@ -16,10 +16,10 @@ export class HomeComponent {
 key : string = "rien"
 boxes:Array<Box>=[]
 listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
-
+panier:Array<Ligne>
 
   constructor(private boxs : BoxsService,private panierService:PanierService){
-   
+   this.panier = this.panierService.getAllBoxes()
     this.boxs.getBoxs().subscribe((resultat)=>{
      
 
@@ -62,11 +62,13 @@ listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
   }
 
   addPanier(box : Box){
-    this.panierService.getAllBoxes()
-    let panier= this.panierService.addPanier(box)
+  
+    this.panier= this.panierService.addPanier(box)
+   
   }
   collectKey(key:string){
       this.key = key
+      console.log(key)
   }
  
 }

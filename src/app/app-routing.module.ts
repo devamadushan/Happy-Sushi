@@ -4,7 +4,7 @@ import { HomeComponent } from './component/home/home.component';
 import { DetailComponent } from './component/detail/detail.component';
 const routes: Routes = [
   {path: '' , component : HomeComponent},
-  {path: 'detail/{box}',component : DetailComponent}
+  {path: 'detail/:box',component : DetailComponent}
 ];
 
 @NgModule({

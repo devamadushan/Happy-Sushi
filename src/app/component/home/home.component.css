@@ -87,8 +87,8 @@
     margin-left: 1%;
     overflow: auto;
     background-color: rgb(255, 255, 255);
-    width: 15%;
-    height: 530px;
+/*     width: 15%; */
+    max-height: 530px;
 }
 
 .bi{

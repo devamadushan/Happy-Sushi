@@ -16,7 +16,7 @@ export class PanierService {
     return  this.panier
   }
 
-  setPanierBoxes(boxes: any) {
+  setPanierBoxes(boxes: Array<Ligne>) {
     let panier = boxes
 
     localStorage.setItem("lesBoxes", JSON.stringify(panier))
@@ -24,7 +24,7 @@ export class PanierService {
   }
 
   addPanier(uneBox: Box) {
-   this.getAllBoxes()
+  this.getAllBoxes()
     let avoirBox = false
     let qte = 1
     for (const uneLigne of this.panier) {
@@ -38,5 +38,23 @@ export class PanierService {
       this.panier.push(ligne)
     }
     localStorage.setItem("lesBoxes",JSON.stringify(this.panier))
+    return this.panier
   }
+
+  deletePanier(idBox : number){
+    let updateBoxes= this.panier.filter(function(uneLigne){
+      if(uneLigne.box.id == idBox && uneLigne.qte >1){
+        uneLigne.qte = uneLigne.qte - 1
+        return uneLigne
+      }
+      else{
+        return uneLigne.box.id!= idBox
+      }
+    })
+
+    this.panier=updateBoxes
+    this.setPanierBoxes(this.panier)    
+    return this.panier
+  }
+
 }

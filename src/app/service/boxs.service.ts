@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
 import { Observable } from 'rxjs';
 import { Ligne } from '../modele/Ligne';
+import { Box } from '../modele/Box';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,13 @@ export class BoxsService {
   public getBoxs(): Observable<any>{
     console.log(this.http.get(environment.apiBaseUrl))
     return this.http.get(environment.apiBaseUrl)
+  }
+  getBoxsById(idBox : number){
+    let box = this.getBoxs().subscribe((lesBoxes:Array<Box>)=>{
+      lesBoxes.find((box) => box.id == idBox)
+    })
+ 
+    return box
   }
 
 }

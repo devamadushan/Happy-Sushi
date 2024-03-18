@@ -2,9 +2,7 @@
 <i class="bi bi-cart-fill logo-panier"></i>
 <hr>
 <div class="panier">
-    <app-ligne-panier></app-ligne-panier>
-</div>
-<div *ngIf="lesBoxes.length > 0">
-    <button type="submit">Payer</button>
+    <app-ligne-panier [lesLignes]="panier"></app-ligne-panier>
 </div>
 </div>
+
