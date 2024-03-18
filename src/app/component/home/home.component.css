@@ -1,8 +1,8 @@
 .carte{
     width: 70%;
     margin: auto;
+   
     
-    margin-right: 15%;
     
     
 }
@@ -28,9 +28,9 @@
 
 .list{
     text-align: center;
-
+    
     width: 100%;
-    position: sticky;
+  
     text-align: center;
     display: flex;
     height: 210px;
@@ -53,10 +53,10 @@
     animation-duration: 10s;
     animation-name: mesImages;
     animation-iteration-count:2s;
-    height: 100px;
-    width: 100%;
+    margin: auto;
+    width: 70%;
     text-align: center;
-    padding: 11%;
+    
     position: relative;
    
 }
@@ -84,11 +84,13 @@
 }
 .laList{
     margin-top: 1.6%;
-    margin-left: 1%;
+    margin-left: 2%;
     overflow: auto;
     background-color: rgb(255, 255, 255);
-/*     width: 15%; */
-    max-height: 530px;
+    width: 10%; 
+    height: 74%;
+    
+
 }
 
 .bi{

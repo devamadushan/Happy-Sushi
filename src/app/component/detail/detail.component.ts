@@ -13,10 +13,10 @@ import { BoxsService } from '../../service/boxs.service';
 })
 export class DetailComponent implements OnInit{
 
-box : number = 0
-lesDetailDeBox :Box | undefined
-  constructor(private route : ActivatedRoute,private boxService :BoxsService , private detailBox:Box ) {
-    this.lesDetailDeBox=undefined
+box : any = 0
+lesDetailDeBox :any
+  constructor(private route : ActivatedRoute,private boxService :BoxsService) {
+    
   }
 
 ngOnInit():void{
@@ -24,11 +24,10 @@ this.route.params.subscribe(params =>{
 
   let id = params['box']
   this.box =numberAttribute(id)
-  let lesBox = this.boxService.getBoxs()
-  //lesDetailDeBox = this.boxService.getBoxsById(box)
-  
-
-  //console.log("box : :" , this.box)
+  this.lesDetailDeBox = this.boxService.getBoxsById(this.box)
+  console.log("testttt ::: :",this.lesDetailDeBox)
+ console.log("id :: ",this.box)
+ 
 })
 
 

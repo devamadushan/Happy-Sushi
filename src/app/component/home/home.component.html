@@ -1,12 +1,12 @@
-<div class="row d-flex">
-    <!-- <div class="col-3 col-lg-2 position-fixed laList">
+<div class="">
+    <div class="position-fixed laList">
         <div class="list" *ngFor="let keys of listBoxBySaveurs.keys() ">
             <hr>
 
             <div class="zone " (click)="collectKey(keys)" style="cursor: pointer;">
                 <img src="../../../assets/{{keys}}.png" alt="" style="width: 100%;">
                 <div>
-                    <p class="saveur " style="font-size: 90%;text-align: center; ">{{ keys }}</p>
+                    <p class="saveur " style="font-size: 70%;text-align: center; ">{{ keys }}</p>
                 </div>
 
 
@@ -14,11 +14,11 @@
 
             <hr>
         </div>
-    </div> -->
+    </div>
     <div class="col-1">
         <app-panier [panier]="panier"></app-panier>
     </div>
-    <div class="col">
+    <div class="col-12">
         <span *ngIf="key == 'rien'">
 
             <div class="row carte">
@@ -27,14 +27,15 @@
 
                     <div class="card">
 
-                        <img src="http://localhost:8080/api/image/{{ box.image }}" alt="" style="cursor: pointer;"
-                            [routerLink]="'detail/' + box.id">
+                        <img src="http://localhost:8080/api/image/{{ box.image }}" alt="" style="cursor: pointer;">
 
-
-                        <button class="button-box" (click)="addPanier(box)">{{ box.nom }} </button>
+                       <br>
+                        <button class="button-box" (click)="addPanier(box)">{{ box.nom }} <i class="bi bi-plus-circle-fill"style="position: absolute;margin-left: 6%;margin-top: -5%;color:black"></i></button>
+                        <p style="font-size: 70%;">{{ box.pieces }} pieces</p>
+                        <i class="bi bi-eye"  [routerLink]="'detail/' + box.id" style="cursor: pointer;"></i>
                     </div>
 
-                    <p style="color: white; padding-top: 2%;">${{ box.prix }}</p>
+                    <p style="color: white; padding-top: 2%;">  ${{ box.prix }}</p>
                     <hr style="width: 50%; margin: auto;">
                 </div>
 
