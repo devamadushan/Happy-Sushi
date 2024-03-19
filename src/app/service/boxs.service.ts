@@ -18,8 +18,12 @@ export class BoxsService {
     console.log(this.http.get(environment.apiBaseUrl))
     return this.http.get(environment.apiBaseUrl)
   }
-  getBoxsById(idBox: number): Promise<Box | undefined> {
-    return new Promise((resolve, reject) => {
+
+
+
+  getBoxsById(lesBoxs:Array<Box>,idBox: number) {
+   return lesBoxs.find((uneBox:Box)=>uneBox.id==idBox)
+    /* return new Promise((resolve, reject) => {
       this.getBoxs().subscribe((lesBoxes: Array<Box>) => {
         const box = lesBoxes.find((box: Box) => box.id === idBox);
         if (box) {
@@ -28,7 +32,7 @@ export class BoxsService {
           resolve(undefined); // Résoudre la promesse avec undefined si aucune boîte n'est trouvée
         }
       });
-    });
+    }); */
   }
   
 

@@ -11,32 +11,28 @@ import { BoxsService } from '../../service/boxs.service';
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
-export class DetailComponent implements OnInit{
+export class DetailComponent {
 
 box : any = 0
-lesDetailDeBox :any
+lesDetailDeBox :Box | undefined
   constructor(private route : ActivatedRoute,private boxService :BoxsService) {
     
   }
 
 ngOnInit():void{
 this.route.params.subscribe(params =>{
-
   let id = params['box']
   this.box =numberAttribute(id)
-  this.lesDetailDeBox = this.boxService.getBoxsById(this.box)
-  console.log("testttt ::: :",this.lesDetailDeBox)
- console.log("id :: ",this.box)
- 
+  this.boxService.getBoxs().subscribe((lesBoxs)=>{
+    this.lesDetailDeBox = this.boxService.getBoxsById(lesBoxs,this.box)
+    console.log("testttt ::: :",this.lesDetailDeBox)
+    console.log("id :: ",this.box)
+  })  
 })
 
 
 }
 
-getDetailBox(){
 
-
-
-}
 
 }

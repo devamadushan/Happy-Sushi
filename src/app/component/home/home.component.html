@@ -35,13 +35,36 @@
                         <i class="bi bi-eye"  [routerLink]="'detail/' + box.id" style="cursor: pointer;"></i>
                     </div>
 
-                    <p style="color: white; padding-top: 2%;">  ${{ box.prix }}</p>
+                    <p style="color: white; padding-left: 2%;padding-right: 2%;margin: auto; background-color: #ff7f17; width: 20%;margin-top: 5%;">  ${{ box.prix }}</p>
                     <hr style="width: 50%; margin: auto;">
                 </div>
 
             </div>
         </span>
         <span *ngIf="key !='rien'">
+            <div class="row carte">
+                <h6 style="margin: auto;text-align: center;padding-top: 5%;">{{key}}</h6>
+                <div *ngFor="let box of listBoxBySaveurs.get(key)" class="col my-4" style="text-align: center;">
+                    
+                    <div class="card">
+
+                        <img src="http://localhost:8080/api/image/{{ box.image }}" alt="" style="cursor: pointer;">
+
+                       <br>
+                        <button class="button-box" (click)="addPanier(box)">{{ box.nom }} <i class="bi bi-plus-circle-fill"style="position: absolute;margin-left: 6%;margin-top: -5%;color:black"></i></button>
+                        <p style="font-size: 70%;">{{ box.pieces }} pieces</p>
+                        <i class="bi bi-eye"  [routerLink]="'detail/' + box.id" style="cursor: pointer;"></i>
+                    </div>
+
+                    <p style="color: white; padding-top: 2%;">  ${{ box.prix }}</p>
+                    <hr style="width: 50%; margin: auto;">
+                </div>
+
+            </div>
+          <!--   
+           <div *ngFor="let box of listBoxBySaveurs.get(key)">  
+        {{box.nom}}
+        </div>  -->
         </span>
     </div>
 </div>

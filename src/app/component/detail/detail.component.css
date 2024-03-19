@@ -1,0 +1,46 @@
+.detail{
+    width: 100%; 
+    text-align: center;
+    padding: 2%;
+}
+.table1{
+    width: 50%;
+    border: medium solid #000000;
+    margin: auto;
+    text-align: center;
+}
+.table1 tr{
+    border: medium solid #000000;
+    text-align: center;
+   
+}
+.table1 th{
+    background-color: #ff7f17;
+    
+}
+.table1 td{
+    border: medium solid #000000;
+}
+.table2{
+    margin: auto;
+    width: 50%;
+}
+
+.table2 th {
+    border: medium solid #000000;
+    background-color: #ff7f17 ;
+}
+.table2 {
+    margin-top: 5%;
+    border: medium solid #000000;
+}
+.table2 td{
+    border: medium solid #000000;
+
+}
+.table{
+    background-color: white;
+    width: 60%;
+    margin: auto;
+    padding-bottom: 2%;
+}
