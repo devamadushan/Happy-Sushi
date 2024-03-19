@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PanierComponent } from './component/panier/panier.component';
 import { LignePanierComponent } from './component/ligne-panier/ligne-panier.component';
 import { DetailComponent } from './component/detail/detail.component';
+import { MentionLegalesComponent } from './component/mention-legales/mention-legales.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailComponent } from './component/detail/detail.component';
     HomeComponent,
     PanierComponent,
     LignePanierComponent,
-    DetailComponent
+    DetailComponent,
+    MentionLegalesComponent
   ],
   imports: [
     BrowserModule,

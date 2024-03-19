@@ -4,7 +4,7 @@
             <hr>
 
             <div class="zone " (click)="collectKey(keys)" style="cursor: pointer;">
-                <img src="../../../assets/{{keys}}.png" alt="" style="width: 100%;">
+                <img src="./assets/{{keys}}.png" alt="" style="width: 100%;">
                 <div>
                     <p class="saveur " style="font-size: 70%;text-align: center; ">{{ keys }}</p>
                 </div>
@@ -35,7 +35,7 @@
                         <i class="bi bi-eye"  [routerLink]="'detail/' + box.id" style="cursor: pointer;"></i>
                     </div>
 
-                    <p style="color: white; padding-left: 2%;padding-right: 2%;margin: auto; background-color: #ff7f17; width: 20%;margin-top: 5%;">  ${{ box.prix }}</p>
+                    <p style="color: white; padding-left: 2%;padding-right: 2%;margin: auto; background-color: #ff7f17; width: 20%;margin-top: 5%;">  {{ box.prix }}€</p>
                     <hr style="width: 50%; margin: auto;">
                 </div>
 
@@ -56,7 +56,7 @@
                         <i class="bi bi-eye"  [routerLink]="'detail/' + box.id" style="cursor: pointer;"></i>
                     </div>
 
-                    <p style="color: white; padding-top: 2%;">  ${{ box.prix }}</p>
+                    <p style="color: white; padding-top: 2%;">  {{ box.prix }}€</p>
                     <hr style="width: 50%; margin: auto;">
                 </div>
 
