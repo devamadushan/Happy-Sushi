@@ -1,29 +1,28 @@
 .lignes{
     margin: auto;
-    width: 100%;
+    
     border-top: 5px solid  #C0C0C0 ; /* couleur et épaisseur des bordures */
     padding: 8px; /* espace à l'intérieur des cellules */
-   border-radius: 200px;
+    border-radius: 200px;
 }
 .ligne{
     border-collapse: collapse;
-  border-left: 3px solid #ff7f17;
-    
-   
+    border-left: 3px solid #ff7f17;
     text-align: center;
+    padding: 5%;
     
+}
+.ligne tr td{
+    width: 100%;
 }
 .buttonDel{
     
-    margin-left: -80%;
+    
     text-align: center;
    
 }
 .bu{
-   float: right;
-    
-    height: 30px;
-    
+    float: right;
     cursor: pointer;
 }
 .btn{

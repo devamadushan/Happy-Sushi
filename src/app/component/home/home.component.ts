@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { BoxsService } from '../../service/boxs.service';
 import { Box } from '../../modele/Box';
 import { PanierComponent } from '../panier/panier.component';
@@ -18,10 +18,10 @@ boxes:Array<Box>=[]
 listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
 panier:Array<Ligne>
 
+
   constructor(private boxs : BoxsService,private panierService:PanierService){
-   this.panier = this.panierService.getAllBoxes()
+  this.panier = this.panierService.getAllBoxes()
     this.boxs.getBoxs().subscribe((resultat)=>{
-     
 
       for (const uneBox of resultat) {
         let box1=Box.transforme(uneBox)
@@ -30,6 +30,21 @@ panier:Array<Ligne>
       this.boxesBySaveur()
       
       
+    })
+
+    panierService.onMajPanier.subscribe(()=>{
+      this.panier=[]
+      this.panier = this.panierService.getAllBoxes()
+      this.boxs.getBoxs().subscribe((resultat)=>{
+  
+        for (const uneBox of resultat) {
+          let box1=Box.transforme(uneBox)
+          this.boxes.push(box1)
+        }
+      
+        
+        
+      })
     })
   }
 
@@ -64,6 +79,7 @@ panier:Array<Ligne>
   addPanier(box : Box){
   
     this.panier= this.panierService.addPanier(box)
+  
    
   }
   collectKey(key:string){

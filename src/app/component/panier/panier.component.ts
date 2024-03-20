@@ -17,7 +17,5 @@ export class PanierComponent {
 
   }
 
-  static addPanier(nom :String){
-    console.log(nom)
-  }
+
 }

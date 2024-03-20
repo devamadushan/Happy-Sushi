@@ -11,15 +11,32 @@ import { Ligne } from '../../modele/Ligne';
 export class LignePanierComponent {
 
   @Input ({required:true}) lesLignes:Array<Ligne> = new Array<Ligne>()
+
   constructor(private boxs :PanierService ){
     let boxes = boxs.getAllBoxes()
     //console.log("test",boxes[0]['Box'])
     for (const box of boxes) {
       this.lesLignes.push(box)
-    }    
+    }
+   
   }
 
+  lePrixTotal(){
+    let total = 0
+    for (const uneLigne of this.lesLignes) {
+      total+= uneLigne.qte*uneLigne.box.prix
 
+    }
+    return total
+  }
+
+  addPanier(uneBox : Box){
+    this.boxs.addPanier(uneBox)
+  }
+
+  deleteBoxInPanier(uneBox : Box){
+    this.boxs.deleteBoxInPanier(uneBox)
+  }
 /*   afficheLesBoxes():any{
     let resultat:Array<Box> = []
 for (const box of this.lesBoxes) {
@@ -37,7 +54,8 @@ for (const box of this.lesBoxes) {
   } */
 
   deleteBox(idBox : number){
-    this.lesLignes = this.boxs.deletePanier(idBox)      
+    this.lesLignes = this.boxs.deletePanier(idBox)  
+     
   }
 
 /*   modifierPanier(idBox,qte){

@@ -1,11 +1,19 @@
 
-<div *ngFor="let uneLigne of lesLignes" >
+<div  >
     
-    <table class="lignes table">
-        <tr>
+    <table class="lignes table" >
+        <tr *ngFor="let uneLigne of lesLignes">
             <td class="ligne">{{ uneLigne.box.nom}} </td>
-
-            <td class="buttonDel"><p  class="bu" (click)="deleteBox(uneLigne.box.id)"> x {{ uneLigne.qte }}  <i class="bi bi-trash"></i> </p></td>
+            <td class="buttonDel"> <i (click)="addPanier(uneLigne.box)" class="bi bi-plus-circle-fill"></i> {{ uneLigne.qte }} <i (click)="deleteBox(uneLigne.box.id)" class="bi bi-dash-circle-fill"></i>  </td>
+            <td>{{uneLigne.qte*uneLigne.box.prix}} €</td>
+            <td><i (click)="deleteBoxInPanier(uneLigne.box)" class="bu"  class="bi bi-trash"></i></td>
+        </tr>
+        
+        <tr *ngIf="lesLignes.length>0" style="font-size: 160%; margin: auto;text-align: center; border-top: medium solid #C0C0C0;border-left: medium solid #ff7f17 ">
+           
+            <td >Total </td>
+            <td colspan="1">{{lePrixTotal().toFixed(1)}} €</td>
+            
         </tr>
       
     </table>
@@ -13,6 +21,6 @@
 
 </div>
 
-<div *ngIf="lesLignes.length>0" style="padding-top: 5%; text-align: center; background-color:  #C0C0C0 ;">
-    <button class="btn">click</button>
+<div *ngIf="lesLignes.length>0" style="padding-top: 5%; text-align: center; background-color: none;">
+    <a href="/valider"><button class="btn" >click</button></a>
 </div>

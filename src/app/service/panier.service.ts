@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Box } from '../modele/Box';
 import { Ligne } from '../modele/Ligne';
 
@@ -7,6 +7,9 @@ import { Ligne } from '../modele/Ligne';
 })
 export class PanierService {
   panier : Array<Ligne>
+
+@Output() onMajPanier=new EventEmitter<any>()
+
   constructor( ) {
     this.panier = JSON.parse(localStorage.getItem("lesBoxes") ?? "[]")
   }
@@ -38,6 +41,7 @@ export class PanierService {
       this.panier.push(ligne)
     }
     localStorage.setItem("lesBoxes",JSON.stringify(this.panier))
+    this.onMajPanier.emit()
     return this.panier
   }
 
@@ -45,16 +49,29 @@ export class PanierService {
     let updateBoxes= this.panier.filter(function(uneLigne){
       if(uneLigne.box.id == idBox && uneLigne.qte >1){
         uneLigne.qte = uneLigne.qte - 1
+      
         return uneLigne
       }
       else{
+      
         return uneLigne.box.id!= idBox
       }
     })
 
     this.panier=updateBoxes
-    this.setPanierBoxes(this.panier)    
+    this.setPanierBoxes(this.panier)  
+    this.onMajPanier.emit()  
     return this.panier
   }
-
+deleteBoxInPanier(uneBox : Box){
+  let lesBoxes = this.panier.filter(function(uneLigne){
+  
+      return uneLigne.box.id!= uneBox.id
+    
+  })
+  this.panier = lesBoxes
+  this.setPanierBoxes(this.panier)
+  this.onMajPanier.emit()  
+  return this.panier
+}
 }
