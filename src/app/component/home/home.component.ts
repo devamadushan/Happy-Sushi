@@ -35,16 +35,6 @@ panier:Array<Ligne>
     panierService.onMajPanier.subscribe(()=>{
       this.panier=[]
       this.panier = this.panierService.getAllBoxes()
-      this.boxs.getBoxs().subscribe((resultat)=>{
-  
-        for (const uneBox of resultat) {
-          let box1=Box.transforme(uneBox)
-          this.boxes.push(box1)
-        }
-      
-        
-        
-      })
     })
   }
 

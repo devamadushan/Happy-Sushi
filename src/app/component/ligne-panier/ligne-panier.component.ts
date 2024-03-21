@@ -18,7 +18,6 @@ export class LignePanierComponent {
     for (const box of boxes) {
       this.lesLignes.push(box)
     }
-   
   }
 
   lePrixTotal(){
@@ -64,4 +63,8 @@ for (const box of this.lesBoxes) {
 
     }
   } */
+
+  resetLignes(){
+    this.lesLignes = []
+  }
 }

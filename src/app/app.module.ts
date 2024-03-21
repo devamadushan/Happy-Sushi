@@ -14,6 +14,7 @@ import { LignePanierComponent } from './component/ligne-panier/ligne-panier.comp
 import { DetailComponent } from './component/detail/detail.component';
 import { MentionLegalesComponent } from './component/mention-legales/mention-legales.component';
 import { ValiderPanierComponent } from './component/valider-panier/valider-panier.component';
+import { HistoriqueComponent } from './component/historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ValiderPanierComponent } from './component/valider-panier/valider-panie
     LignePanierComponent,
     DetailComponent,
     MentionLegalesComponent,
-    ValiderPanierComponent
+    ValiderPanierComponent,
+    HistoriqueComponent
   ],
   imports: [
     BrowserModule,

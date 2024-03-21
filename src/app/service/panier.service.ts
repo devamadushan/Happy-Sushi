@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Box } from '../modele/Box';
 import { Ligne } from '../modele/Ligne';
+import { LignePanierComponent } from '../component/ligne-panier/ligne-panier.component';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,7 @@ export class PanierService {
   this.getAllBoxes()
     let avoirBox = false
     let qte = 1
+    
     for (const uneLigne of this.panier) {
       if (uneLigne.box.id == uneBox.id) {
         uneLigne.qte++
@@ -41,7 +43,7 @@ export class PanierService {
       this.panier.push(ligne)
     }
     localStorage.setItem("lesBoxes",JSON.stringify(this.panier))
-    this.onMajPanier.emit()
+   
     return this.panier
   }
 
@@ -60,7 +62,7 @@ export class PanierService {
 
     this.panier=updateBoxes
     this.setPanierBoxes(this.panier)  
-    this.onMajPanier.emit()  
+    
     return this.panier
   }
 deleteBoxInPanier(uneBox : Box){
@@ -73,5 +75,11 @@ deleteBoxInPanier(uneBox : Box){
   this.setPanierBoxes(this.panier)
   this.onMajPanier.emit()  
   return this.panier
+}
+
+resetPanier(){
+  localStorage.setItem("lesBoxes","[]")
+  this.panier=[]
+  
 }
 }

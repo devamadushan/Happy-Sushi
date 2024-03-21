@@ -1,0 +1,25 @@
+<div style="margin-top: 12%;padding: 2%;">
+<div *ngFor="let commande of historique" style="width: 30%; margin: auto; background-color: white;padding: 2%;">
+<div style="text-align: center;">
+<p>Commande {{commande.id}} :</p>
+
+
+<table class="table2" style="margin: auto;">
+    <tr >
+        <td>Nom</td>
+        <td>Prix</td>
+        <td>Quantité</td>
+    </tr>
+    <tr  *ngFor="let ligne of commande.lignes">
+        <td>{{ligne.box.nom}}</td>
+        <td>{{ligne.box.prix*ligne.qte}}€</td>
+        <td>{{ligne.qte}}</td>
+        
+    </tr>
+    
+</table>
+
+
+</div>
+</div>
+</div>

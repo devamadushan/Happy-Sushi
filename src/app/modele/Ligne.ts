@@ -6,5 +6,6 @@ export class Ligne{
     constructor(box:Box, qte:number){
         this.box=box
         this.qte=qte
+      
     }
 }
