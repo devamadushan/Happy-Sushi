@@ -17,4 +17,11 @@ export class HistoriqueComponent {
   }
 
 
+  getTotal(lignes : Array<Ligne>){
+    let total = 0
+    for (const ligne of lignes) {
+      total+=ligne.box.prix*ligne.qte
+    }
+    return total
+  }
 }

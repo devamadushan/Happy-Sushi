@@ -5,10 +5,11 @@
 
 
 <table class="table2" style="margin: auto;">
-    <tr >
+    <tr style="background-color:  #ff7f17;">
         <td>Nom</td>
         <td>Prix</td>
         <td>Quantité</td>
+        
     </tr>
     <tr  *ngFor="let ligne of commande.lignes">
         <td>{{ligne.box.nom}}</td>
@@ -16,10 +17,15 @@
         <td>{{ligne.qte}}</td>
         
     </tr>
+    <tr style="background-color: #ff7f17;">
+        <td>Total</td>
+        <td colspan="2">{{getTotal(commande.lignes)}}</td>
+    </tr>
     
 </table>
 
 
 </div>
 </div>
+<a href=""><button>Retour</button></a>
 </div>
