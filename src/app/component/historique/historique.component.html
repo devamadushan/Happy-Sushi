@@ -1,10 +1,31 @@
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 <div style="margin-top: 12%;padding: 2%;">
-<div *ngFor="let commande of historique" style="width: 30%; margin: auto; background-color: white;padding: 2%;">
+<div *ngFor="let commande of historique" style="width: 70%; margin: auto; background-color: white;padding: 2%;">
 <div style="text-align: center;">
-<p>Commande {{commande.id}} :</p>
+<p>Commande #{{commande.id}} :</p>
 
 
-<table class="table2" style="margin: auto;">
+<table class="table2" style="margin: auto;width: 50%;">
     <tr style="background-color:  #ff7f17;">
         <td>Nom</td>
         <td>Prix</td>
@@ -27,5 +48,5 @@
 
 </div>
 </div>
-<a href=""><button>Retour</button></a>
+<a href=""><button style=" background-color: #ff7f17; color: white; ">Retour</button></a>
 </div>

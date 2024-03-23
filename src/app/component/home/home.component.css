@@ -66,20 +66,9 @@
     0%{
       transform:translateY(0);
     }
-    16%{
-      transform:translateY(-200px);
-    }
-    32%{
-      transform:translateY(-400px);
-    }
-    48%{
-      transform:translateY(-600px);
-    }
-    64%{
-      transform:translateY(-800px);
-    }
+ 
     80%{
-      transform:translateY(0px);
+      transform:translateY(-200px);
     }
 }
 .laList{
