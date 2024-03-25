@@ -1,5 +1,11 @@
-<div class="zone-panier">
-<i class="bi bi-cart-fill logo-panier"></i>
+<div class="zone-panier" >
+    <div class="form-check form-switch" style="margin-left: 50%;position: absolute;margin-top: 6%;display: block;font-size: 90%;">
+    
+        <input class="form-check-input" style="" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+        <p>{{option}}</p>
+      </div>
+   
+<i class="bi bi-cart-fill logo-panier" ></i>
 <hr>
 <div class="panier">
     <app-ligne-panier [lesLignes]="panier"></app-ligne-panier>

@@ -12,7 +12,8 @@ import { Ligne } from '../../modele/Ligne';
 
 export class HomeComponent {
 
-
+surPlaceOuEmporter = false
+optionSE = "Sur place"
 key : string = "rien"
 boxes:Array<Box>=[]
 listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
@@ -77,4 +78,9 @@ panier:Array<Ligne>
       console.log(key)
   }
  
+  getOption(option : string){
+    this.surPlaceOuEmporter = true
+    this.optionSE = option
+    
+  }
 }

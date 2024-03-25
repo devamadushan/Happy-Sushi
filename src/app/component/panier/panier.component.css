@@ -23,3 +23,7 @@ width: 22%;
 font-size: 80%;
 
 }
+#flexSwitchCheckChecked:checked{
+    background-color: #ff7f17;
+    border-color: #ff7f17;
+}
