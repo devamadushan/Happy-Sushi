@@ -3,3 +3,13 @@
     text-align: center;
    
 }
+.tro {
+    background-color:  #ff7f17;
+}
+.retour{
+    background-color: #ff7f17; color: white; 
+}
+.historique{
+    margin-top: 12%;
+    padding: 2%;
+}

@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiBaseUrl: 'http://localhost:8080/api/boxes'
+    apiBaseUrl: 'https://ldv-sushi-api.azurewebsites.net/api/boxes'
     
 };

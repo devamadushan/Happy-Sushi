@@ -7,6 +7,7 @@ import { LignePanierComponent } from '../component/ligne-panier/ligne-panier.com
   providedIn: 'root'
 })
 export class PanierService {
+  //attribut de Panier
   panier : Array<Ligne>
 
 @Output() onMajPanier=new EventEmitter<any>()
@@ -14,12 +15,12 @@ export class PanierService {
   constructor( ) {
     this.panier = JSON.parse(localStorage.getItem("lesBoxes") ?? "[]")
   }
-
+// getter de panier
   getAllBoxes() {
 
     return  this.panier
   }
-
+//setter de panier
   setPanierBoxes(boxes: Array<Ligne>) {
     let panier = boxes
 
@@ -27,6 +28,7 @@ export class PanierService {
 
   }
 
+  // ajout d'une nouvelle box dans le panier
   addPanier(uneBox: Box) {
   this.getAllBoxes()
     let avoirBox = false
@@ -47,6 +49,7 @@ export class PanierService {
     return this.panier
   }
 
+  // une methode qui permet de diminuer la quantiter d'une box dans un panier 
   deletePanier(idBox : number){
     let updateBoxes= this.panier.filter(function(uneLigne){
       if(uneLigne.box.id == idBox && uneLigne.qte >1){
@@ -65,6 +68,8 @@ export class PanierService {
     
     return this.panier
   }
+
+  // une méthode qui permet de supprimer completement une Box dans un panier
 deleteBoxInPanier(uneBox : Box){
   let lesBoxes = this.panier.filter(function(uneLigne){
   
@@ -77,6 +82,7 @@ deleteBoxInPanier(uneBox : Box){
   return this.panier
 }
 
+// remetre le panier a 0
 resetPanier(){
   localStorage.setItem("lesBoxes","[]")
   this.panier=[]

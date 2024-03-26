@@ -2,17 +2,21 @@ import { Component, Input } from '@angular/core';
 import { PanierService } from '../../service/panier.service';
 import { Box } from '../../modele/Box';
 import { Ligne } from '../../modele/Ligne';
-
+import { HomeComponent } from '../home/home.component';
 @Component({
   selector: 'app-ligne-panier',
   templateUrl: './ligne-panier.component.html',
   styleUrl: './ligne-panier.component.css'
 })
 export class LignePanierComponent {
-
+  
+  // lesLignes rcuperer depuis le parent
   @Input ({required:true}) lesLignes:Array<Ligne> = new Array<Ligne>()
+ // Option qui est récuperer depuis le parent
+  @Input({required:true}) option:string = ""
 
   constructor(private boxs :PanierService ){
+    // récuperer les boxes qui sont dans  le panier
     let boxes = boxs.getAllBoxes()
     //console.log("test",boxes[0]['Box'])
     for (const box of boxes) {
@@ -20,6 +24,7 @@ export class LignePanierComponent {
     }
   }
 
+  // une méthode qui pérmet de calculer le prix total
   lePrixTotal(){
     let total = 0
     for (const uneLigne of this.lesLignes) {
@@ -28,42 +33,21 @@ export class LignePanierComponent {
     }
     return total
   }
-
+// ajoute une nouvelle box quand l'utilisateur click sur le button +
   addPanier(uneBox : Box){
     this.boxs.addPanier(uneBox)
   }
-
+//méthode qui permet de supprimer complétement le box 
   deleteBoxInPanier(uneBox : Box){
     this.boxs.deleteBoxInPanier(uneBox)
   }
-/*   afficheLesBoxes():any{
-    let resultat:Array<Box> = []
-for (const box of this.lesBoxes) {
-  let rep =0
- /*  let avoirBox=this.lesBoxes.find((elm)function {elm.id==box.id}) */
-/* if(!resultat.includes(box)){
-    resultat.push(box)
-  }
-  else{
-    //Modifier la quantite deja presente dans resultat 
-  }
-  return resultat
-}
-    this.lesBoxes
-  } */
 
+// methode qui permet de supprimer la quantité et le Box si la quantité est <1
   deleteBox(idBox : number){
     this.lesLignes = this.boxs.deletePanier(idBox)  
-     
   }
 
-/*   modifierPanier(idBox,qte){
-    let box = this.lesBoxes.find((uneBox)=>uneBox.id==idBox)
-    if(box == undefined){
-
-    }
-  } */
-
+  // remet a 0 le panier quand l'utilisateur click sur valider
   resetLignes(){
     this.lesLignes = []
   }

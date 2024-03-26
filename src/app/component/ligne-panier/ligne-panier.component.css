@@ -32,3 +32,15 @@
     
 
 }
+.total{
+    font-size: 160%;
+    margin: auto;
+    text-align: center;
+    border-top: medium solid #C0C0C0;
+    border-left: medium solid #ff7f17 
+}
+.valider{
+    padding-top: 5%; 
+    text-align: center; 
+    background-color: none;
+}

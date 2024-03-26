@@ -13,26 +13,17 @@ export class BoxsService {
   constructor(private http:HttpClient) { 
   
   }
-
+// récupere les API avec l'URL qui est indiquer dans l'environement 
   public getBoxs(): Observable<any>{
     console.log(this.http.get(environment.apiBaseUrl))
     return this.http.get(environment.apiBaseUrl)
   }
 
 
-
+// retourne le Box qui est present dans une list de box en comparenet un idBOx recuperer en parametre
   getBoxsById(lesBoxs:Array<Box>,idBox: number) {
    return lesBoxs.find((uneBox:Box)=>uneBox.id==idBox)
-    /* return new Promise((resolve, reject) => {
-      this.getBoxs().subscribe((lesBoxes: Array<Box>) => {
-        const box = lesBoxes.find((box: Box) => box.id === idBox);
-        if (box) {
-          resolve(box); // Résoudre la promesse avec la boîte trouvée
-        } else {
-          resolve(undefined); // Résoudre la promesse avec undefined si aucune boîte n'est trouvée
-        }
-      });
-    }); */
+    
   }
   
 

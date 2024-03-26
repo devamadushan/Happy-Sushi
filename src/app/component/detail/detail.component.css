@@ -44,3 +44,16 @@
     margin: auto;
     padding-bottom: 2%;
 }
+.text-1{
+    background-color: #ff7f17;
+    width: 12%;
+    margin: auto;
+    color: white;
+}
+.bi{
+    float:right;margin-top: -4.5%;  color: red; cursor: pointer; font-size: 150%;
+}
+.table1 tr{
+    margin: auto;
+    text-align: center;
+}

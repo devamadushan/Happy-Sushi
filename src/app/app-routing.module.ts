@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '' , component : HomeComponent},
   {path: 'detail/:box',component : DetailComponent},
   {path: 'mention-legales',component : MentionLegalesComponent},
-  {path: 'valider',component: ValiderPanierComponent},
+  {path: 'valider/:option',component: ValiderPanierComponent},
   {path:'historique',component:HistoriqueComponent}
 ];
 

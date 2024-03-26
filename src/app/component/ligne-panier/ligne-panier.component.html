@@ -8,7 +8,7 @@
             <td><i (click)="deleteBoxInPanier(uneLigne.box)" class="bu" style="cursor: pointer;" class="bi bi-trash"></i></td>
         </tr>
         
-        <tr *ngIf="lesLignes.length>0" style="font-size: 160%; margin: auto;text-align: center; border-top: medium solid #C0C0C0;border-left: medium solid #ff7f17 ">
+        <tr *ngIf="lesLignes.length>0" class="total" style="">
            
             <td >Total </td>
             <td colspan="1">{{lePrixTotal().toFixed(1)}} €</td>
@@ -20,6 +20,6 @@
 
 </div>
 
-<div *ngIf="lesLignes.length>0" style="padding-top: 5%; text-align: center; background-color: none;">
-    <a href="/valider"><button class="btn" >Valider</button></a>
+<div *ngIf="lesLignes.length>0" class="valider" style="">
+    <a href="" [routerLink]="'/valider/'+option "><button class="btn"  >Valider</button></a>
 </div>

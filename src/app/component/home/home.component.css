@@ -84,6 +84,26 @@
 
 }
 
-.bi{
-  
+.modal{
+    display: block;
+    width: 100%;
+    margin: auto;
 }
+.modal-dialog{
+    --bs-modal-width: 100%;
+    margin: auto;
+}
+
+
+.logoSushi{
+    margin-left: 43%;
+    width: 15%;
+}
+.Surplace{
+    width: 35%;cursor: pointer;margin-left: 15%;border: medium solid #000000;
+}
+
+.Emporter{
+    width: 35% ; cursor: pointer;border: medium solid #000000;
+}
+
