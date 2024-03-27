@@ -12,31 +12,31 @@ import { Ligne } from '../../modele/Ligne';
 
 export class HomeComponent {
 
-// L'attribut permet de desactiver Modal 'Sur place ou emporter'
+// L'attribut permet de désactiver le modal 'Sur place ou emporter'.
 surPlaceOuEmporter = false
-// option Par defaut 'Sur place'
+// Option par défaut : 'Sur place'
 optionSE = "Sur place"
-// L'affichage des cartes quand l'utilisateur na pas click sur un saveur key = 'rien'
+// Affichage des cartes lorsque l'utilisateur n'a pas cliqué sur une saveur (clé = 'rien')."
 key : string = "rien"
-// Tout les boxes recuperer par l'API
+//Tous les boîtes récupérées par l'API.
 boxes:Array<Box>=[]
-// Une list des Boxes trier par les saveurs
+
+// Une liste des boxes triées par les saveurs
 listBoxBySaveurs:Map<string,Array<Box>> = new Map<string,Array<Box>>()
-//tout les boxes choisis par l'utilisateur
+// Toutes les boxes choisies par l'utilisateur
 panier:Array<Ligne>
 
 
   constructor(private boxs : BoxsService,private panierService:PanierService){
-  // Récupere tout les boxes choisis par l'utilisateur dans le panierService
+// Récupère toutes les boxes choisies par l'utilisateur dans le panierService
   this.panier = this.panierService.getAllBoxes()
-
-// Récupere tout les boxes depuis l'API et crée des objets BOXES
+// Récupère toutes les boxes depuis l'API et crée des objets BOXES
     this.boxs.getBoxs().subscribe((resultat)=>{
       for (const uneBox of resultat) {
         let box1=Box.transforme(uneBox)
         this.boxes.push(box1)
       }
-      // trie tout les Boxes avec leur Saveurs
+      // Trie toutes les boîtes avec leurs saveurs
       this.boxesBySaveur()
     })
     
@@ -47,7 +47,7 @@ panier:Array<Ligne>
   }
 
 
-// MÉTHODE QUI PERMET DE TRIER LES BOXES PAR LEUR SAVEURS
+// Méthode permettant de trier les boîtes par leurs saveurs
   boxesBySaveur(){
 
     let boxesAvocatSaumonCheese= this.boxes.filter((uneBox)=>uneBox.saveurs.includes("avocat")&&uneBox.saveurs.includes("saumon")&&uneBox.saveurs.includes("cheese"))
@@ -73,20 +73,20 @@ panier:Array<Ligne>
     this.listBoxBySaveurs.set("Avocat-Saumon-Thon-Cheese-Spicy",avocatSaumonThonCheeseSpicy)
   this.listBoxBySaveurs.keys()
   }
-//permet de ajouter une box dans le panier en utilisant le panier service
+  // Permet d'ajouter une box dans le panier en utilisant le service de panier
   addPanier(box : Box){
   
     this.panier= this.panierService.addPanier(box)
   
    
   }
-// permet de changer l'affichage de la carte grace a la clé recupere 'qui trie par le saveur'
+// Permet de changer l'affichage de la carte grâce à la clé récupérée qui trie par la saveur
   collectKey(key:string){
       this.key = key
       //console.log(key)
   }
  
-//méthode qui permet de récupere l'option saisie par l'utilisateur
+// Méthode permettant de récupérer l'option saisie par l'utilisateur
   getOption(option : string){
     this.surPlaceOuEmporter = true
     this.optionSE = option

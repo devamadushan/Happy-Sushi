@@ -13,14 +13,14 @@ export class BoxsService {
   constructor(private http:HttpClient) { 
   
   }
-// récupere les API avec l'URL qui est indiquer dans l'environement 
+// Récupère les API avec l'URL indiquée dans l'environnement.
   public getBoxs(): Observable<any>{
     console.log(this.http.get(environment.apiBaseUrl))
     return this.http.get(environment.apiBaseUrl)
   }
 
 
-// retourne le Box qui est present dans une list de box en comparenet un idBOx recuperer en parametre
+// Retourne la boîte présente dans une liste de boîtes en comparant un idBox récupéré en paramètre.
   getBoxsById(lesBoxs:Array<Box>,idBox: number) {
    return lesBoxs.find((uneBox:Box)=>uneBox.id==idBox)
     
