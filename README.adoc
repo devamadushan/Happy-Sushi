@@ -1,4 +1,4 @@
-= Compte Rendu : HAppy Sushi
+= Compte Rendu : Happy Sushi
 :toc-title: Tables des matières
 :toc: top
 Projet réalisé par : *Devamadushan* +
