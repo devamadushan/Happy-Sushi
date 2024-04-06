@@ -19,12 +19,12 @@ image::src/assets/C3.png[]
 image::src/assets/C4.png[]
 
 == Etape 1 : API
-=== a).
+=== a).Configuration de l'API
 ----
 Tout d'abord, nous avons diffusé une API fournie par nos enseignants en local, à l'aide d'IntelliJ.
 ----
 image::src/assets/JsonLocal.png[]
-=== b).
+=== b).Configuration Angular pour l'API
 ----
 deuxiemement nous avont cree un projet angular et un serviceBOx et u environnement pour aller cherc her le API qui est present en Localhost.
 ----
@@ -75,7 +75,7 @@ export class BoxsService {
 NOTE: HttpClient est une classe qui permet d'utiliser les méthodes HTTP (GET, POST, PUT, DELETE...).
 
 == Etap 2: Utilisation des API
-=== a).
+=== a).Création du composant
 ----
 Une fois que nous avons récupéré les APIs nécessaires, je crée un composant Home dans lequel je vais tenter d'afficher toutes les boîtes de sushi collectées.
 ----
@@ -117,7 +117,7 @@ panier:Array<Ligne>
 NOTE: J'utilise la méthode *subscribe()* pour observer les résultats d'une opération asynchrone. Elle permet d'exécuter du code en réponse à ces résultats.
 
 
-=== b).
+=== b).Affichage des boxes de sushi
 ----
 Une fois que j'ai terminé le développement côté backend, je passe au frontend pour afficher les boxes.
 ----
@@ -139,3 +139,6 @@ Une fois que j'ai terminé le développement côté backend, je passe au fronten
 ----
 J'utilise une boucle for-of pour parcourir un par un les attributs de la variable "boxes" et j'essaie d'afficher le nom, le prix et l'image de chaque boîte.
 ----
+image::src/assets/boxes.png[]
+== Conclusion
+Le projet m'a aidé à développer mes connaissances en TypeScript, le framework Angular, et ma créativité. Cependant, il a été plus difficile comparé à d'autres projets car nous étions plus autonomes que d'habitude et sans guide. De plus, reproduire exactement la maquette (notamment le menu déroulant)a été difficile au niveau du front-end. Enfin, j'ai ressenti une grande satisfaction à la fin du projet en parvenant à reproduire fidèlement ce que j'avais réalisé sur la maquette.
