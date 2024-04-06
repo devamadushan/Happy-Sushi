@@ -1,4 +1,4 @@
-= Compte Rendu : Sushi App
+= Compte Rendu : HAppy Sushi
 :toc-title: Tables des matières
 :toc: top
 Projet réalisé par : *Devamadushan* +
