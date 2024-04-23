@@ -1,9 +1,12 @@
 
 <div>
     <table class="lignes table" >
-        <tr *ngFor="let uneSaveur of lesSaveurs().keys()">
-         <td>{{lesSaveurs().get(uneSaveur)}}</td>
+        <tr *ngFor="let uneSaveur of lesSaveurs().keys()" >
+            <td class="ligne">{{ uneSaveur }} {{lesSaveurs().get(uneSaveur)}}</td>
         </tr>
+    </table>
+    <table class="lignes table" >
+     
         <tr *ngFor="let uneLigne of lesLignes">
 
             <td class="ligne">{{ uneLigne.box.nom}} </td>
