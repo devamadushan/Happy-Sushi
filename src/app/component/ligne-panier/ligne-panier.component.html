@@ -1,7 +1,11 @@
 
 <div>
     <table class="lignes table" >
+        <tr *ngFor="let uneSaveur of lesSaveurs().keys()">
+         <td>{{lesSaveurs().get(uneSaveur)}}</td>
+        </tr>
         <tr *ngFor="let uneLigne of lesLignes">
+
             <td class="ligne">{{ uneLigne.box.nom}} </td>
             <td class="buttonDel"> <i (click)="addPanier(uneLigne.box)" style="cursor: pointer;" class="bi bi-plus-circle-fill"></i> {{ uneLigne.qte }} <i (click)="deleteBox(uneLigne.box.id)" class="bi bi-dash-circle-fill" style="cursor: pointer;"></i>  </td>
             <td>{{uneLigne.qte*uneLigne.box.prix}} €</td>
@@ -9,10 +13,21 @@
         </tr>
         
         <tr *ngIf="lesLignes.length>0" class="total" style="">
-           
-            <td >Total </td>
-            <td colspan="1">{{lePrixTotal().toFixed(1)}} €</td>
             
+            <span *ngIf="lePrixTotal() < 30">
+                <td >Total </td>
+                <td colspan="1">{{lePrixTotal().toFixed(1)}} €</td>
+               
+                </span>
+            
+            <span *ngIf="lePrixTotal() > 30">
+               <td>Total </td>
+                <td colspan="1">{{prixAvecReduction().toFixed(1)}} €</td>
+             <td style="font-size: 10px" colspan="1">reduction</td>
+             <td colspan="1">- {{offre()}}</td>
+            </span>
+
+
         </tr>
       
     </table>

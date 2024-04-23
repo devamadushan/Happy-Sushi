@@ -23,6 +23,15 @@ export class HistoriqueComponent {
     for (const ligne of lignes) {
       total+=ligne.box.prix*ligne.qte
     }
+    if (total >30){
+      let nbMax = 1000
+      for (const boxes of lignes) {
+        if(boxes.box.prix < nbMax){
+          nbMax = boxes.box.prix
+        }
+      }
+      total -= nbMax 
+    }
     return total
   }
 }
